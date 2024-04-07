@@ -1,3 +1,9 @@
+containerd (1.6.24~ds1-1deepin1) unstable; urgency=medium
+
+  * Skip TestSetPositiveOomScoreAdjustment.
+
+ -- LiChengGang <lichenggang@uniontech.com>  Sun, 07 Apr 2024 14:42:58 +0800
+
 containerd (1.6.24~ds1-1) unstable; urgency=medium
 
   * New upstream version 1.6.24~ds1
