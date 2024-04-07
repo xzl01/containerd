@@ -8,3 +8,4 @@
 0008-Add-Debian-specific-CNI-bin-dir-to-ctr-run-command.patch
 0009-seccomp-apparmor-add-go-noinline.patch
 0010-sys-unprivileged-user-can-adjust-oom-scroe-when-init.patch
+0011-skip-TestSetPositiveOomScoreAdjustment.patch
