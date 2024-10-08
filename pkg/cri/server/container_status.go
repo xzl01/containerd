@@ -17,14 +17,14 @@
 package server
 
 import (
+	"context"
 	"encoding/json"
 	"fmt"
 
-	"github.com/containerd/containerd/errdefs"
 	containerstore "github.com/containerd/containerd/pkg/cri/store/container"
+	"github.com/containerd/errdefs"
 
 	runtimespec "github.com/opencontainers/runtime-spec/specs-go"
-	"golang.org/x/net/context"
 	runtime "k8s.io/cri-api/pkg/apis/runtime/v1"
 )
 

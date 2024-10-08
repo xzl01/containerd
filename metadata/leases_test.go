@@ -22,14 +22,13 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/containerd/containerd/errdefs"
 	"github.com/containerd/containerd/leases"
+	"github.com/containerd/errdefs"
 	bolt "go.etcd.io/bbolt"
 )
 
 func TestLeases(t *testing.T) {
-	ctx, db, cancel := testEnv(t)
-	defer cancel()
+	ctx, db := testEnv(t)
 
 	lm := NewLeaseManager(NewDB(db, nil, nil))
 
@@ -108,8 +107,7 @@ func TestLeases(t *testing.T) {
 }
 
 func TestLeasesList(t *testing.T) {
-	ctx, db, cancel := testEnv(t)
-	defer cancel()
+	ctx, db := testEnv(t)
 
 	lm := NewLeaseManager(NewDB(db, nil, nil))
 
@@ -252,8 +250,7 @@ func TestLeasesList(t *testing.T) {
 }
 
 func TestLeaseResource(t *testing.T) {
-	ctx, db, cancel := testEnv(t)
-	defer cancel()
+	ctx, db := testEnv(t)
 
 	lm := NewLeaseManager(NewDB(db, nil, nil))
 

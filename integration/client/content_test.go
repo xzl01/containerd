@@ -25,8 +25,8 @@ import (
 	. "github.com/containerd/containerd"
 	"github.com/containerd/containerd/content"
 	"github.com/containerd/containerd/content/testsuite"
-	"github.com/containerd/containerd/errdefs"
 	"github.com/containerd/containerd/namespaces"
+	"github.com/containerd/errdefs"
 )
 
 func newContentStore(ctx context.Context, root string) (context.Context, content.Store, func() error, error) {
@@ -41,7 +41,7 @@ func newContentStore(ctx context.Context, root string) (context.Context, content
 		name  = testsuite.Name(ctx)
 	)
 
-	wrap := func(ctx context.Context) (context.Context, func(context.Context) error, error) {
+	wrap := func(ctx context.Context, sharedNS bool) (context.Context, func(context.Context) error, error) {
 		n := atomic.AddUint64(&count, 1)
 		ctx = namespaces.WithNamespace(ctx, fmt.Sprintf("%s-n%d", name, n))
 		return client.WithLease(ctx)
